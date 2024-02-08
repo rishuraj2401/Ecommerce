@@ -6,7 +6,7 @@ import { config } from "dotenv";
 import morgan from "morgan";
 import Stripe from "stripe";
 import cors from "cors";
- 
+import path from "path"
 // Importing Routes
 import userRoute from "./routes/user.js";
 import productRoute from "./routes/products.js";
@@ -46,7 +46,6 @@ app.use("/api/v1/dashboard", dashboardRoute);
 
 app.use("/uploads", express.static("uploads"));
 app.use(errorMiddleware);
-
 app.listen(port, () => {
   console.log(`Express is working on http://localhost:${port}`);
 });
