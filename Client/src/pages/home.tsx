@@ -36,7 +36,7 @@ const Home = () => {
           <Skeleton width="80vw" />
         ) : (
           data?.products.map((i) => (
-            <ProductCard
+            <ProductCard   
               key={i._id}
               productId={i._id}
               name={i.name}
