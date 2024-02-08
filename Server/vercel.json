@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "src/app.ts", 
+        "src": "src/app",
         "use": "@vercel/node"
       }
     ],
@@ -14,6 +14,11 @@
     ],
     "env": {
       "NODE_ENV": "production"
+    },
+    "functions": {
+      "api/**/*.ts": {
+        "runtime": "@vercel/node"
+      }
     }
   }
   
