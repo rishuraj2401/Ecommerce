@@ -33,7 +33,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(cors());
 
-app.get("*", (req, res) => {
+app.get("/", (req, res) => {
   res.send("API Working with /api/v1");
 });
 
