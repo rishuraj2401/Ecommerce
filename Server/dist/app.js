@@ -19,13 +19,13 @@ const port = process.env.PORT || 4000;
 const mongoURI = process.env.MONGO_URI || "";
 const stripeKey = process.env.STRIPE_KEY || "";
 connectDB(mongoURI);
-export const stripe = new Stripe("sk_test_51OhAXRSBWlMp8QMqpJrILdrxB2zwmArLVKoQU9VWH3lYi85mRjq6DbcIgDR1YZoADZKao3I36TU17kkEOPjD8FXk00Qj5uDL9M");
+export const stripe = new Stripe(stripeKey);
 export const myCache = new NodeCache();
 const app = express();
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(cors());
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
     res.send("API Working with /api/v1");
 });
 // Using Routes
